@@ -834,6 +834,8 @@ nvme_ctrlr_update_ns_ana_states(const struct spdk_nvme_ana_group_descriptor *des
 		ns->ana_state = desc->ana_state;
 	}
 
+	// some ana state change hook trigger
+
 	return 0;
 }
 

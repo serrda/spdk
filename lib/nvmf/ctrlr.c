@@ -4624,6 +4624,7 @@ nvmf_ctrlr_process_io_cmd(struct spdk_nvmf_request *req)
 			if (spdk_unlikely(!ctrlr->cdata.oncs.reservations)) {
 				goto invalid_opcode;
 			}
+			// some custom reservation hook change
 			spdk_thread_send_msg(ctrlr->subsys->thread, nvmf_ns_reservation_request, req);
 			return SPDK_NVMF_REQUEST_EXEC_STATUS_ASYNCHRONOUS;
 		case SPDK_NVME_OPC_COPY:
